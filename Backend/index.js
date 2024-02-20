@@ -3,7 +3,7 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
-const port = 7722;
+const port = 7712;
 
 app.use(express.json());
 const hotelRoute = require('./routes/hotelRoute');
