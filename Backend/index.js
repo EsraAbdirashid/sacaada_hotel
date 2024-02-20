@@ -17,3 +17,7 @@ app.use('/api/hotel/',hotelRoute)
 
 
 
+// server configuration
+app.listen(port,()=>{
+        console.log(`http://localhost:${port}`)
+    })
