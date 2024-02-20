@@ -7,3 +7,13 @@ const port = 4432;
 
 app.use(express.json());
 const hotelRoute = require('./routes/hotelRoute');
+
+
+app.use('/api/hotel/',hotelRoute)
+
+
+
+
+
+
+
