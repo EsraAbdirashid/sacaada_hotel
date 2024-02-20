@@ -92,3 +92,11 @@ model Guest {
   email     String    @unique
   booking   Booking[]
 }
+model Payment {
+  payment_id    Int      @id @default(autoincrement())
+  booking_id    Int
+  amount        Decimal
+  paymentDate   DateTime @default(now())
+  paymentMethod String
+  booking       Booking  @relation(fields: [booking_id], references: [booking_id])
+}
