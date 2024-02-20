@@ -82,3 +82,13 @@ model Booking {
   payments     Payment[]
   guests       Guest     @relation(fields: [guest_id], references: [guest_id])
 }
+
+model Guest {
+  guest_id  Int       @id @default(autoincrement())
+  firstName String
+  MiddleName  String
+  lastName  String
+  phone     String
+  email     String    @unique
+  booking   Booking[]
+}
