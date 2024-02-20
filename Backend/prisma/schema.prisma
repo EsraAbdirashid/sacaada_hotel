@@ -70,3 +70,15 @@ model Rooms {
   room_type  RoomType @relation(fields: [type_id], references: [type_id])
   booking    Booking  @relation(fields: [booking_id], references: [booking_id])
 }
+
+model Booking {
+  booking_id   Int       @id @default(autoincrement())
+  roomNumber   Int
+  guest_id     Int
+  totalPrice   Decimal
+  checkinDate  DateTime @default(now())
+  checkoutDate DateTime @default(now())
+  room         Rooms[]
+  payments     Payment[]
+  guests       Guest     @relation(fields: [guest_id], references: [guest_id])
+}
