@@ -50,3 +50,12 @@ model Emplooyee {
   hotel_id     Int
   hotels       Hotel    @relation(fields: [hotel_id], references: [hotel_id])
 }
+
+model RoomType {
+  type_id       Int     @id @default(autoincrement())
+  name          String
+  Description   String
+  PricePerNight Decimal
+  capacity      Int
+  room          Rooms[]
+}
