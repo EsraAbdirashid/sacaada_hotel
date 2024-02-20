@@ -19,4 +19,6 @@ enum ROLES{
 
 model Users {
   userid Int @id @default(autoincrement())
+  email String @unique
+  
 }
