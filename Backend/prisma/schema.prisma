@@ -36,3 +36,17 @@ model Hotel {
   emplooyee Emplooyee[]
   room      Rooms[]
 }
+
+model Emplooyee {
+  emplooyee_id Int      @id @default(autoincrement())
+  firstname    String
+  middlename   String
+  lastname     String
+  position     String
+  salary       Decimal
+  phone        String
+  email        String
+  HireDate     DateTime @default(now())
+  hotel_id     Int
+  hotels       Hotel    @relation(fields: [hotel_id], references: [hotel_id])
+}
