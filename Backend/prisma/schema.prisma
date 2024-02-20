@@ -59,3 +59,14 @@ model RoomType {
   capacity      Int
   room          Rooms[]
 }
+
+model Rooms {
+  room_id    Int      @id @default(autoincrement())
+  hotel_id   Int
+  type_id    Int
+  booking_id Int
+  status     String
+  hotel      Hotel    @relation(fields: [hotel_id], references: [hotel_id])
+  room_type  RoomType @relation(fields: [type_id], references: [type_id])
+  booking    Booking  @relation(fields: [booking_id], references: [booking_id])
+}
